@@ -5,3 +5,6 @@ Slack Audit
 
 
 
+## License
+
+MIT
