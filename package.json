@@ -6,6 +6,7 @@
     "test": "mocha lib/tests"
   },
   "dependencies": {
+    "@slack/client": "^4.3.1",
     "cjson": "0.3.x",
     "columnify": "^1.5.4",
     "debug": "^2.2.0",
@@ -25,5 +26,5 @@
     "lib/"
   ],
   "license": "MIT",
-  "devDependencies": { }
+  "devDependencies": {}
 }
