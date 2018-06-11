@@ -1,10 +1,8 @@
 {
-  "name": "delivery",
+  "name": "slack-audit",
   "version": "0.0.99",
-  "description": "meteor deploybot",
-  "scripts": {
-    "test": "mocha lib/tests"
-  },
+  "description": "slack audit tool",
+  "scripts": { },
   "dependencies": {
     "@slack/client": "^4.3.1",
     "cjson": "0.3.x",
@@ -23,7 +21,7 @@
   },
   "author": "Yo-An Lin <yoanlin93@gmail.com>",
   "files": [
-    "lib/"
+    "main.js"
   ],
   "license": "MIT",
   "devDependencies": {}
