@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { WebClient } = require('@slack/client');
 const _ = require('underscore');
 const geoip = require('geoip-lite');
@@ -6,21 +7,21 @@ const moment = require('moment');
 const useragent = require('useragent');
 const yargs = require('yargs');
 
-// An access token (from your Slack app or custom integration - xoxp, xoxb, or xoxa)
-const token = process.env.SLACK_TOKEN;
-
 
 const storyboard = require('storyboard');
 const mainStory = storyboard.mainStory;
 
-const web = new WebClient(token);
 
 require('storyboard-preset-console');
 
 // This argument can be a channel ID, a DM ID, a MPDM ID, or a group ID
 
+// An access token (from your Slack app or custom integration - xoxp, xoxb, or xoxa)
+const envToken = process.env.SLACK_TOKEN;
+
 function fetchLogs(query, page) {
     mainStory.debug(`fetching access logs at page: ${page}`);
+    const web = new WebClient(query.token || envToken);
     return web.team.accessLogs({ page: page, count: query.count });
 }
 
@@ -71,6 +72,7 @@ yargs.command('logs [username]', 'fetch the logs', (yargs) => {
         console.log(columns);
     });
   })
+  .option('token', { alias: 'v', default: process.env.SLACK_TOKEN })
   .option('verbose', { alias: 'v', default: false })
   .option('pages', { alias: 'p', default: 1 })
   .option('count', { alias: 'c', default: 1000 })
