@@ -1,0 +1,29 @@
+{
+  "name": "delivery",
+  "version": "0.0.99",
+  "description": "meteor deploybot",
+  "scripts": {
+    "test": "mocha lib/tests"
+  },
+  "dependencies": {
+    "cjson": "0.3.x",
+    "columnify": "^1.5.4",
+    "debug": "^2.2.0",
+    "geoip-lite": "^1.2.1",
+    "moment": "^2.22.2",
+    "storyboard": "^3.1.1",
+    "storyboard-preset-console": "^3.1.1",
+    "underscore": "^1.9.1",
+    "useragent": "^2.3.0",
+    "yargs": "^11.0.0"
+  },
+  "bin": {
+    "slack-audit": "./main.js"
+  },
+  "author": "Yo-An Lin <yoanlin93@gmail.com>",
+  "files": [
+    "lib/"
+  ],
+  "license": "MIT",
+  "devDependencies": { }
+}
